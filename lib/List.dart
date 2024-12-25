@@ -11,29 +11,31 @@ class Models extends StatefulWidget {
 class _ModelsState extends State<Models> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.grey,
-        title: const Center(
-          child: Text(
-            'Models',
-            style: TextStyle(
-                color: Colors.white,
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 5),
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.grey,
+          title: const Center(
+            child: Text(
+              'Models',
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 5),
+            ),
           ),
         ),
+        body: Center(
+            child: Column(
+          children: [
+            SizedBox(
+              height: 200,
+              child: Flutter3DViewer(src: 'assets/models/DamagedHelmet.glb'),
+            )
+          ],
+        )),
       ),
-      body: Center(
-          child: Column(
-        children: [
-          SizedBox(
-            height: 200,
-            child: Flutter3DViewer(src: 'assets/models/DamagedHelmet.glb'),
-          )
-        ],
-      )),
     );
   }
 }
